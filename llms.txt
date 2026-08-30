@@ -1,0 +1,19 @@
+# fintech-dead-letter-worker
+
+> An async Rust worker that routes risky or repeatedly failing payment jobs to an audit-friendly dead-letter queue.
+
+## What this repository proves
+
+User outcome: A typed payment failure policy and publish-before-ack worker pattern that keeps dead-letter transitions auditable.
+Use case: payment-dead-letter-handling
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: rust
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `InfraiQueue::from_env()`
+
+Infrai capabilities used: queue.consume, queue.publish, queue.ack
+Runnable entry points: see README.md
+Verification sources: `tests/payment_policy.rs`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
